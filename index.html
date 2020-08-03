@@ -8,7 +8,16 @@
 
   <div style="height: 250px">This is the iframe</div>
 
-  <iframe width="100%" height="75%" name="my_frame" src="https://www.driveon.finance/">
+  <form action="http://caf.local/iframe-signon/" method="post" target="my_frame">
+    <input type="hidden" name="api-key" value="DE3A015AE481E7990497A7D77B010201">
+    <input type="hidden" name="user-id" value="C123OS">
+    <input type="hidden" name="caf-name" value="test 777">
+    <input type="hidden" name="caf-email" value="sample777@connective.com">
+    <input type="hidden" name="caf-private-token" value="PRIVATE123456">
+    <input type="submit">
+  </form>
+
+  <iframe width="100%" height="50%" name="my_frame" src="http://caf.local/iframe-signon/">
   </iframe>
   </body>
 </html>
