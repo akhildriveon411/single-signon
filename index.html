@@ -1,23 +1,477 @@
+
 <!DOCTYPE html PUBLIC
-
 <html>
-  <head>
-    <title>Form Iframe Demo</title>
-  </head>
-  <body>
+<head>
+	<title>Form Iframe Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 
-  <div style="height: 250px">This is the iframe</div>
+<body>
+    <h1>Mercury Mock</h1>
+    <div class="container">
+        <h2>Opportunity DATA</h2>
+        <form id="referral-form">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group mb-2">
+                        <label>API KEY:</label>
+                        <input id="api-key" class="form-control" type="text" name="api-key" value="">
+                    </div>
 
-  <form action="http://caf.local/iframe-signon/" method="post" target="my_frame">
-    <input type="hidden" name="api-key" value="DE3A015AE481E7990497A7D77B010201">
-    <input type="hidden" name="user-id" value="C123OS">
-    <input type="hidden" name="caf-name" value="test 777">
-    <input type="hidden" name="caf-email" value="sample777@connective.com">
-    <input type="hidden" name="caf-private-token" value="PRIVATE123456">
-    <input type="submit">
-  </form>
+                    <div class="form-group mb-2">
+                        <label>User ID:</label>
+                        <input id="user-id" class="form-control" type="text" name="user-id" value="C123OS">
+                    </div>
+		            <div class="form-group mb-2">
+                        <label>Opportunity ID:</label>
+                        <input id="opportunity-id" class="form-control" type="text" name="opportunity-id" value="135">
+                    </div>
 
-  <iframe width="100%" height="50%" name="my_frame" src="http://caf.local/iframe-signon/">
-  </iframe>
-  </body>
+                    <div class="form-group mb-2">
+                        <label>Business ID:</label>
+                        <input class="form-control" type="text" name="business-id" value="P123OS">
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label>User First name:</label>
+                        <input class="form-control" type="text" name="user-firstname" value="Grant">
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label>User Last name:</label>
+                        <input class="form-control" type="text" name="user-lastname" value="Clayton">
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label>User Phone:</label>
+                        <input class="form-control" type="text" name="user-phone" value="0406789887">
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label>User Email:</label>
+                        <input class="form-control" type="text" name="user-email" value="a1@a2.com"> 
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>User Business Name:</label>
+                        <input class="form-control" name="user-business-name" value="TEST Business Name">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>First name:</label>
+                        <input class="form-control" name="firstname" value="Agustin">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Last name:</label>
+                        <input class="form-control" name="lastname" value="Origone">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Email:</label>
+                        <input class="form-control" name="email" value="agustin@driveon.finance">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Phone:</label>
+                        <input class="form-control" type="text" name="phone" value="0405335883">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>State:</label>
+                        <input class="form-control" type="text" name="state" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Contact Method:</label>
+                        <input class="form-control" type="text" name="contact-method" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Loan Usage (Personal/Business):</label>
+                        <input class="form-control" type="text" name="loan-usage" value="1">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group mb-2">
+                        <label>Amount to borrow:</label>
+                        <input class="form-control" type="text" name="amount-to-borrow" value="10000">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Loan Term:</label>
+                        <input class="form-control" type="text" name="loan-term" value="5">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Does Client Own Property:</label>
+                        <input class="form-control" type="text" name="client-owns-property" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Credit History:</label>
+                        <input class="form-control" type="text" name="credit-history" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>What Stage is the client at?:</label>
+                        <input class="form-control" type="text" name="client-stage" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Type of Loan / Asset:</label>
+                        <input class="form-control" type="text" name="asset-type" value="20">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Would you like AMFIN to source the asset?</label>
+                        <input class="form-control" type="text" name="sourced-by-amfin" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Asset Source</label>
+                        <input class="form-control" type="text" name="asset-source" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Asset Year</label>
+                        <input class="form-control" type="text" name="asset-year" value="2020">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Asset Make</label>
+                        <input class="form-control" type="text" name="asset-make" value="Toyota">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Asset Model</label>
+                        <input class="form-control" type="text" name="asset-model" value="Corolla">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Asset Variant</label>
+                        <input class="form-control" type="text" name="asset-variant" value="Ascent Sport">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Asset detail/option</label>
+                        <input class="form-control" type="text" name="asset-option" value="Test options/details">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>What do you want to earn from this deal?</label>
+                        <input class="form-control" type="text" name="desired-earning" value="100">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Partner Customer #</label>
+                        <input class="form-control" type="text" name="partner-customer-number" value="AS101F">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Campaign Code</label>
+                        <input class="form-control" type="text" name="campaign-code" value="1001">
+                    </div>
+                </div>
+            </div>
+            <div><strong>ONLY PERSONAL LOAN FIELDS</strong></div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group mb-2">
+                        <label>Loan Purpose:</label>
+                        <input class="form-control" type="text" name="loan-purpose" value="Because reasons">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Client Employment Status:</label>
+                        <input class="form-control" type="text" name="employment-status" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Estimated Net Monthly Income:</label>
+                        <input class="form-control" type="text" name="estimated-month-income" value="100">
+                    </div>
+                </div>
+            </div>
+            <div><strong>ONLY BUSINESS LOAN FIELDS</strong></div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group mb-2">
+                        <label>What type of loan does your business require:</label>
+                        <input class="form-control" type="text" name="loan-type" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Business Name:</label>
+                        <input class="form-control" type="text" name="business-name" value="TEST COMPANY">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>ABN:</label>
+                        <input class="form-control" type="text" name="abn" value="51824753556">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Business Structure:</label>
+                        <input class="form-control" type="text" name="business-structure" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Business Annual TurnOver:</label>
+                        <input class="form-control" type="text" name="business-annual-turnover" value="1"><br>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Business Annual TurnOver:</label>
+                        <input class="form-control" type="text" name="years-trading" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>GST Registered:</label>
+                        <input class="form-control" type="text" name="gst-registered" value="1">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group mb-2">
+                        <label>Business Actively Trading Since:</label>
+                        <input class="form-control" type="text" name="business-trading-since" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Business Industry:</label>
+                        <input class="form-control" type="text" name="business-industry" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Business Address:</label>
+                        <input class="form-control" type="text" name="business-address" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Finance Monthly Revenue:</label>
+                        <input class="form-control" type="text" name="finance-monthly-revenue" value="10">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Finance Monthly Expenses:</label>
+                        <input class="form-control" type="text" name="finance-monthly-expenses" value="1">
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Does the business has overdraft facility?</label>
+                        <input class="form-control" type="text" name="business-overdraft-facility" value="1">
+                    </div>
+                </div>
+            </div>
+            <h2>APPLICATION DATA</h2>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group mb-2">
+                        <label>LOAN PURPOSE:</label>
+                        <input id="loan-purpose" class="form-control" type="text" name="loan-purpose" value="">
+
+                        <label>SALE TYPE:</label>
+                        <input id="sale-type" class="form-control" type="text" name="sale-type" value="">
+
+                        <label>DEALERSHIP:</label>
+                        <input id="dealership" class="form-control" type="text" name="dealership" value="">
+
+                        <label>DEPOSIT:</label>
+                        <input id="deposit" class="form-control" type="text" name="deposit" value="">
+
+                        <label>TRADE IN:</label>
+                        <input id="trade-in" class="form-control" type="text" name="trade-in" value="">
+
+                        <label>PAYOUT:</label>
+                        <input id="payout" class="form-control" type="text" name="payout" value="">
+
+                        <label>KMS</label>
+                        <input id="kms" class="form-control" type="text" name="kms" value="">
+
+                        <label>MIDDLENAME</label>
+                        <input id="middlename" class="form-control" type="text" name="middlename" value="">
+
+                        <label>GENDER</label>
+                        <input id="gender" class="form-control" type="text" name="gender" value="">
+
+                        <label>LICENCE TYPE</label>
+                        <input id="licence-type" class="form-control" type="text" name="licence-type" value="">
+
+                        <label>LICENCE STATE</label>
+                        <input id="licence-state" class="form-control" type="text" name="licence-state" value="">
+
+                        <label>LICENCE NUMBER</label>
+                        <input id="licence-number" class="form-control" type="text" name="licence-number" value="">
+
+                        <label>LICENCE EXPIRY</label>
+                        <input id="licence-expiry" class="form-control" type="text" name="licence-expiry" value="">
+
+                        <label>NUMBER OF DEPENDENTS</label>
+                        <input id="number-dependents" class="form-control" type="text" name="number-dependents" value="">
+
+                        <label>RESIDENCY STATUS</label>
+                        <input id="residency-status" class="form-control" type="text" name="residency-status" value="">
+
+                        <label>RESIDENTIAL STATUS</label>
+                        <input id="residential-status" class="form-control" type="text" name="residential-status" value="">
+
+                        <label>ADDRESS</label>
+                        <input id="address" class="form-control" type="text" name="address" value="">
+
+                        <label>SUBURB</label>
+                        <input id="suburb" class="form-control" type="text" name="suburb" value="">
+
+                        <label>POSTCODE</label>
+                        <input id="postcode" class="form-control" type="text" name="postcode" value="">
+
+                        <label>YEARS AT ADDRESS</label>
+                        <input id="years-at-address" class="form-control" type="text" name="years-at-address" value="">
+
+                        <label>MONTHS AT ADDRESS</label>
+                        <input id="months-at-address" class="form-control" type="text" name="months-at-address" value="">
+
+                        <label>LANDLOARD NAME</label>
+                        <input id="landlord-name" class="form-control" type="text" name="landlord-name" value="">
+
+                        <label>LANDLOARD PHONE</label>
+                        <input id="landlord-phone" class="form-control" type="text" name="landlord-phone" value="">
+
+                        <label>PREVIOUS ADDRESS</label>
+                        <input id="previous-address" class="form-control" type="text" name="previous-address" value="">
+
+                        <label>PREVIOUS SUBURB</label>
+                        <input id="previous-suburb" class="form-control" type="text" name="previous-suburb" value="">
+
+                        <label>PREVIOUS STATE</label>
+                        <input id="previous-state" class="form-control" type="text" name="previous-state" value="">
+
+                        <label>PREVIOUS POSTCODE</label>
+                        <input id="previous-postcode" class="form-control" type="text" name="previous-postcode" value="">
+
+                        <label>PREVIOUS YEARS AT ADDRESS</label>
+                        <input id="previous-years-at-address" class="form-control" type="text" name="previous-years-at-address" value="">
+
+                        <label>PREVIOUS MONTHS AT ADDRESS</label>
+                        <input id="previous-months-at-address" class="form-control" type="text" name="previous-months-at-address" value="">
+
+                        <label>Applicant 2 - FIRSTNAME</label>
+                        <input id="app2-firstname" class="form-control" type="text" name="app2-firstname" value="">
+
+                        <label>Applicant 2 - MIDDLENAME</label>
+                        <input id="app2-middlename" class="form-control" type="text" name="app2-middlename" value="">
+
+                        <label>Applicant 2 - LASTNAME</label>
+                        <input id="app2-lastname" class="form-control" type="text" name="app2-lastname" value="">
+
+                        <label>Applicant 2 - EMAIL</label>
+                        <input id="app2-email" class="form-control" type="text" name="app2-email" value="">
+
+                        <label>Applicant 2 - MOBILE PHONE</label>
+                        <input id="app2-mobile-phone" class="form-control" type="text" name="app2-mobile-phone" value="">
+
+                        <label>Applicant 2 - GENDER</label>
+                        <input id="app2-gender" class="form-control" type="text" name="app2-gender" value="">
+
+                        <label>Applicant 2 - LICENCE TYPE</label>
+                        <input id="app2-licence-type" class="form-control" type="text" name="app2-licence-type" value="">
+
+                        <label>Applicant 2 - LICENCE STATE</label>
+                        <input id="app2-licence-state" class="form-control" type="text" name="app2-licence-state" value="">
+
+                        <label>Applicant 2 - LICENCE NUMBER</label>
+                        <input id="app2-licence-number" class="form-control" type="text" name="app2-licence-number" value="">
+
+                        <label>Applicant 2 - LICENCE EXPIRY</label>
+                        <input id="app2-licence-expiry" class="form-control" type="text" name="app2-licence-expiry" value="">
+
+                        <label>Applicant 2 - NUMBER OF DEPENDENTS</label>
+                        <input id="app2-number-dependents" class="form-control" type="text" name="app2-number-dependents" value="">
+
+                        <label>Applicant 2 - RESIDENCY STATUS</label>
+                        <input id="app2-residency-status" class="form-control" type="text" name="app2-residency-status" value="">
+
+                        <label>Applicant 2 - CREDIT HISTORY</label>
+                        <input id="app2-credit-history" class="form-control" type="text" name="app2-credit-history" value="">
+
+                        <label>Applicant 2 - RESIDENTIAL STATUS</label>
+                        <input id="app2-residential-status" class="form-control" type="text" name="app2-residential-status" value="">
+
+                        <label>Applicant 2 - ADDRESS</label>
+                        <input id="app2-address" class="form-control" type="text" name="app2-address" value="">
+
+                        <label>Applicant 2 - SUBURB</label>
+                        <input id="app2-suburb" class="form-control" type="text" name="app2-suburb" value="">
+
+                        <label>Applicant 2 - STATE</label>
+                        <input id="app2-state" class="form-control" type="text" name="app2-state" value="">
+
+                        <label>Applicant 2 - POSTCODE</label>
+                        <input id="app2-postcode" class="form-control" type="text" name="app2-postcode" value="">
+
+                        <label>Applicant 2 - YEARS AT ADDRESS</label>
+                        <input id="app2-years-at-address" class="form-control" type="text" name="app2-years-at-address" value="">
+
+                        <label>Applicant 2 - MONTHS AT ADDRESS</label>
+                        <input id="app2-months-at-address" class="form-control" type="text" name="app2-months-at-address" value="">
+
+                        <label>Applicant 2 - LANDLOARD NAME</label>
+                        <input id="app2-landlord-name" class="form-control" type="text" name="app2-landlord-name" value="">
+
+                        <label>Applicant 2 - LANDLOARD PHONE</label>
+                        <input id="app2-landlord-phone" class="form-control" type="text" name="app2-landlord-phone" value="">
+
+                        <label>Applicant 2 - PREVIOUS ADDRESS</label>
+                        <input id="app2-previous-address" class="form-control" type="text" name="app2-previous-address" value="">
+
+                        <label>Applicant 2 - PREVIOUS SUBURB</label>
+                        <input id="app2-previous-suburb" class="form-control" type="text" name="app2-previous-suburb" value="">
+
+                        <label>Applicant 2 - PREVIOUS STATE</label>
+                        <input id="app2-previous-state" class="form-control" type="text" name="app2-previous-state" value="">
+
+                        <label>Applicant 2 - PREVIOUS POSTCODE</label>
+                        <input id="app2-previous-postcode" class="form-control" type="text" name="app2-previous-postcode" value="">
+
+                        <label>Applicant 2 - PREVIOUS YEARS AT ADDRESS</label>
+                        <input id="app2-previous-years-at-address" class="form-control" type="text" name="app2-previous-years-at-address" value="">
+
+                        <label>Applicant 2 - PREVIOUS MONTHS AT ADDRESS</label>
+                        <input id="app2-previous-months-at-address" class="form-control" type="text" name="app2-previous-months-at-address" value="">
+                    </div>
+                </div>
+            </div>
+            <input id="referral-submit" type="submit" value="Submit Opportunity">
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+	        $("#referral-form").on("submit", function(e){
+            e.preventDefault();
+		    $("#api-key2").val($("#api-key").val());
+		    $("#user-id2").val($("#user-id").val());
+		    $("#opportunity-id2").val($("#opportunity-id").val());
+            var data = $("#referral-form").serialize();
+            $.post("https://dev-ninja.driveiq-caf.com.au/api/newReferral/", data, function(){
+                $("#login-form").submit();
+            });
+            });
+        });
+    </script>
+    <hr>
+    <div class="container">
+	<h1>Simulate Login</h1>
+	<form id="login-form" action="https://dev-ninja.driveiq-caf.com.au/iframe-signon" method="post" target="my_frame">
+		<div class="form-group mb-2">
+			<label>API KEY</label>		
+			<input id="api-key2" type="text" class="form-control" name="api-key" value="DE3A015AE481E7990497A7D77B010201">
+		</div>
+		<div class="form-group mb-2">
+			<label>USER ID</label>
+			<input id="user-id2" type="text" class="form-control" name="user-id" value="">
+		</div>
+        <div class="form-group mb-2">
+			<label>USER EMAIL</label>
+			<input id="user-email" type="text" class="form-control" name="user-email" value="">
+		</div>
+        <div class="form-group mb-2">
+			<label>USER FIRSTNAME</label>
+			<input id="user-firstname" type="text" class="form-control" name="user-firstname" value="">
+		</div>
+        <div class="form-group mb-2">
+			<label>USER LASTNAME</label>
+			<input id="user-lastname" type="text" class="form-control" name="user-lastname" value="">
+		</div>
+        <div class="form-group mb-2">
+			<label>USER PHONE</label>
+			<input id="user-phone" type="text" class="form-control" name="user-phone" value="">
+		</div>
+        <div class="form-group mb-2">
+			<label>USER ACL</label>
+			<input id="user-acl" type="text" class="form-control" name="user-acl" value="">
+		</div>
+        <div class="form-group mb-2">
+			<label>USER CRN</label>
+			<input id="user-crn" type="text" class="form-control" name="user-crn" value="">
+		</div>
+		<div class="form-group mb-2">
+			<label>OPPORTUNITY ID</label>
+			<input id="opportunity-id2" type="text" class="form-control" name="opportunity-id" value="">
+		</div>
+		<input type="submit" value="Simulate Login ">
+	</form>
+
+	<iframe width="100%" height="50%" name="my_frame" src="https://dev-ninja.driveiq-caf.com.au/iframe-signon"></iframe>
+     </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
+
